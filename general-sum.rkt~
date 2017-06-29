@@ -1,0 +1,12 @@
+#lang sicp
+
+
+(define (gsum term a next b)
+  (if (> a b)
+      0
+      (+ (term a)
+         (gsum term (next a) next b))))
+
+(define (sum a b) (gsum identity a inc b))
+
+(define

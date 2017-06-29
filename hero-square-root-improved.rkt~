@@ -1,0 +1,15 @@
+#lang sicp
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (sqrt x)
+  (fix-point
+   (lambda (y) (average x (/ x y)))
+   1))
+
+
+(define (fix-point f start)
+  (define tolerance 0.00001)
+  (define good-enuf? 
+  
